@@ -54,11 +54,6 @@ class User extends Authenticatable
     public function hasRole(string $role):bool{
         return $this->getAttribute('role')===$role;
     }
-    public function getRedirectRoute(){
-        if($this->IsAdmin()){
-            return ('admin.admindash');
-        }
-            return RouteServiceProvider::HOME;
-    }
+    
 }
 /*  */

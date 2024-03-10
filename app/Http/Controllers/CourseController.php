@@ -18,11 +18,11 @@ class CourseController extends Controller
         $courses = Course::query()->paginate(5);
         return view('courses.index')->with('courses', $courses);
     }
-    public function home()
-    {
-        $courses = Course::orderBy('created_at', 'desc')->get();
-        return view('courses.home')->with('courses', $courses);
-    }
+    // public function home()
+    // {
+    //     $courses = Course::orderBy('created_at', 'desc')->get();
+    //     return view('courses.layout')->with('courses', $courses);
+    // }
     /**
      * Show the form for creating a new resource.
      *
