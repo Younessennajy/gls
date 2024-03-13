@@ -29,7 +29,6 @@
 
         <label for="level">level</label><br>
         <select name="level" id="level">
-            <option value="All">All</option>
             <option value="A1-1">A1-1</option>
             <option value="A1-2">A1-2</option>
             <option value="A2-1">A2-1</option>

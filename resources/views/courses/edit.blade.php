@@ -5,7 +5,7 @@
   <div class="card-header">Edit COURSE </div>
   <div class="card-body">
 
-      <form action="{{ url('courses/' . $courses->id) }}" method="post">
+      <form action="{{ url('courses/' . $courses->id) }}" method="post"  enctype="multipart/form-data">
         {!! csrf_field() !!}
         @method("PATCH")
         <input type="hidden" name="id" value="{{ $courses->id }}" />

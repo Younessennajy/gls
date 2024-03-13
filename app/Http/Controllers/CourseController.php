@@ -33,6 +33,20 @@ class CourseController extends Controller
         return view('courses.create');
     }
 
+    public function filter(Request $request)
+{
+    $level = $request->input('level');
+
+    if ($level && $level !== 'All') {
+        $courses = Course::where('level', $level)->get();
+    } else {
+        $courses = Course::paginate(5);
+    }
+
+    return view('courses.index')->with('courses', $courses);
+}
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -42,7 +56,6 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'desc' => 'required',
@@ -52,9 +65,7 @@ class CourseController extends Controller
         ]);
 
 
-        if ($request->hasFile('image')) {
-            $validatedData['image'] = $request->file('image')->store('courses', 'public');
-        }
+        $validatedData['image'] = $this->uploadimage($request);
         $course = Course::create($validatedData);
 
         return redirect('courses')->with('flash_message', 'Course Added!');
@@ -92,26 +103,33 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $course = Course::find($id);
-        $input = $request->all();
+{
+    $course = Course::find($id);
 
-        if($request->hasfile('image')){
-            $d = 'storage/'.$course->image;
-            if(File::exists($d)){
-                File::delete($d);
-            }
+    $validatedData = $request->validate([
+        'name' => 'required|max:255',
+        'desc' => 'required',
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'url' => 'required|url',
+        'level' => 'required',
+    ]);
 
-            $file = $request->file('image');
-            $execu = $file()->getClientOriginalExtension();
-            $filename = time().','.$execu;
-            $file->move('storage/',$filename);
-            $course->image=$filename;
-        }
-        $course->update($input);
-        return redirect('courses')->with('flash_message', 'Course Updated!');
+    if ($request->hasFile('image')) {
+        $validatedData['image'] = $this->uploadimage($request);
+    } else {
+        $validatedData['image'] = $course->image;
     }
 
+    $course->update($validatedData);
+
+    return redirect('courses')->with('flash_message', 'Course Updated!');
+}
+
+    private function uploadimage (Request $request){
+        if($request->hasFile('image')){
+            return $request->file('image')->store('storage', 'public');
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *

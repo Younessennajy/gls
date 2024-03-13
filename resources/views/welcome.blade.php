@@ -2,60 +2,60 @@
 <html lang="en">
     <head>
         <title>Cources</title>
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <script src="{{ asset('js/app.js') }}"></script>
+
         <link rel="stylesheet" href="app.css">
-        <link href="{{ asset('node_modules/bootstrap-icons/font/bootstrap-icons.css') }}" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Option 1: Include in HTML -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
 <body>
 
 <header id="header" >
-    <h1 class="text-black"><a href="/"><img src={logo} class='col-2' alt='img'/></a></h1>
-      <ul class='d-flex list-unstyled align-items-center mt-4'>
-        <li><a class="mx-2 bold"  href="/">Home</a></li>
-        <li><a class="mx-2 bold" href="/about">About</a></li>
-        <li><a  class="mx-2 bold" href="courses.html">Courses</a></li>
-        <li><a class="mx-2 bold"  href="trainers.html">Trainers</a></li>
-        <li><a class="mx-2 bold"  href="events.html">Events</a></li>
-        <li><a class="mx-2 bold"  href="pricing.html">Pricing</a></li>
+    <h1 class="text-black"><a href="/"><img src="img/logo.png" class='col-4' alt='img'/></a></h1>
+      <ul class='d-flex list-unstyled align-items-center mt-4 text-gray-800 '>
+        <li><a class="mx-2 bold text-decoration-none hover:text-green-500"  href="#home">Home</a></li>
+        <li><a class="mx-2 bold text-decoration-none" href="#about">About</a></li>
+        <li><a  class="mx-2 bold text-decoration-none" href="/courses">Courses</a></li>
+        <li><a class="mx-2 bold text-decoration-none"  href="#contact">Contact</a></li>
       </ul>
         @if (Route::has('login'))
                 <div>
                     @auth
-                        <a href="{{ url('/home') }}">home</a>
+                        <a href="{{ url('/home') }} "><span style="font-size: 2rem;"><i class="bi bi-house-door"></i></span></a>
                     @else
-                        <a href="{{ route('login') }}" class="mr-2">Log in</a>
+                        <a href="{{ route('login') }}" class="mx-4 text-decoration-none" >Log in</a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" >Register</a>
+                            <a href="{{ route('register') }}" class=" text-decoration-none" >Register</a>
                         @endif
                     @endauth
                 </div>
         @endif
-
 </header>
 
-
-
+{{-- home --}}
 <section id="hero" class="d-flex justify-content-center align-items-center">
     <div class="container position-absolute">
         <h1 class="display-4">Learning Today,<br/>Leading Tomorrow</h1>
-        <h2 class="text-white mb-4">We are a team of talented designers making websites with Bootstrap</h2>
+        <h2 class="text-white mb-4">Fuel your academic future on our learning portal platform</h2>
+        <a href="/courses">
         <button class="learn-more">
             <span class="circle" aria-hidden="true">
             <span class="icon arrow"></span>
             </span>
             <span class="button-text">Get Started</span>
           </button>
+        </a>
     </div>
 </section>
 
 
 {{-- about --}}
-<div id="about" class="about">
-    <div class="container my-5">
+<div id="about" class="about  my-5">
+    <div class="container">
         <div class="row">
+                <div class="section-title ">
+                    <h2>About</h2>
+                </div>
             <div class="col-lg-6 order-lg-2">
                 <img src="img/about.jpg" class="img-fluid rounded" alt="About Image"/>
             </div>
@@ -72,11 +72,11 @@
                         Experience personalized learning with our expert instructors..
                     </li>
                     <li>
-                        <i class="bi bi-check"></i>
+                        <i class="bi bi-check "></i>
                         Dive into the rich German culture and language nuances..
                     </li>
                     <li>
-                        <i class="bi bi-check"></i>
+                        <i class="bi bi-check "></i>
                         Explore a comprehensive program tailored to your language goals.
                     </li>
                 </ul>
@@ -105,7 +105,7 @@
         <div id="fact-resp" class="row d-flex justify-content-between align-items-center">
             <div class="col-lg-3 col-md-6">
                 <div class="count-box">
-                    <i class="bi bi-school"></i>
+                    <i class="bi bi-lightbulb"></i>
                     <span>+2</span>
                     <p><strong>Years </strong> Of Experience</p>
                 </div>
@@ -121,7 +121,7 @@
 
             <div class="col-lg-3 col-md-6">
                 <div class="count-box">
-                    <i class="bi bi-chalkboard-teacher"></i>
+                    <i class="bi bi-book"></i>
                     <span>+6</span>
                     <p><strong>Courses </strong> </p>
                 </div>
@@ -129,7 +129,7 @@
 
             <div class="col-lg-3 col-md-6">
                 <div class="count-box">
-                    <i class="bi bi-book"></i>
+                    <i class="bi bi-journal-bookmark "></i>
                     <span>+6</span>
                     <p><strong>Lessons </strong> </p>
                 </div>
@@ -168,7 +168,7 @@
             </div>
 
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                <form action="" method="post">
+                <form action="{{ route('contact.submit') }}" method="post">
                     @csrf
                     <div class="row">
                         <div class="form-group col-md-6">
@@ -218,29 +218,35 @@
 
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <Link to="#">Home</Link></li>
-              <li><i class="bx bx-chevron-right"></i> <Link to="#">About us</Link></li>
-              <li><i class="bx bx-chevron-right"></i> <Link to="#">Services</Link></li>
-              <li><i class="bx bx-chevron-right"></i> <Link to="#">Terms of service</Link></li>
-              <li><i class="bx bx-chevron-right"></i> <Link to="#">Privacy policy</Link></li>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-chevron-right"></i> <Link to="/">Home</Link></li>
+              <li><i class="bi bi-chevron-right"></i> <Link to="#about">About us</Link></li>
+              <li><i class="bi bi-chevron-right"></i> <Link to="#">Services</Link></li>
+              <li><i class="bi bi-chevron-right"></i> <Link to="#">Terms of service</Link></li>
+              <li><i class="bi bi-chevron-right"></i> <Link to="#">Privacy policy</Link></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a to="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a to="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a to="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a to="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a to="#">Graphic Design</a></li>
+            <h4>Our Levels</h4>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-chevron-right"></i> <a to="#">A1 - 1</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a to="#">A1 - 2</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a to="#">A2 - 1</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a to="#">A2 - 2</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a to="#">B1</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>Join Our Platforms</h4>
+            <div class="social-links text-md-right pt-3 pt-md-0 my-2">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
             <form action="" method="post">
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2"/>
@@ -261,14 +267,33 @@
         </div>
 
       </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
+
     </div>
 </footer>
+
+<script>
+    // Add smooth scrolling to anchor links
+    document.addEventListener("DOMContentLoaded", function() {
+        var scrollLinks = document.querySelectorAll('a[href^="#"]');
+
+        scrollLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                var targetId = this.getAttribute('href').substring(1);
+                var targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    var offsetTop = targetElement.offsetTop;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
