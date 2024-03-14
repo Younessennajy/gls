@@ -168,7 +168,7 @@
             </div>
 
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                <form action="{{ route('contact.submit') }}" method="post">
+                <form action="{{-- {{ route('contact.submit') }} --}}" method="post">
                     @csrf
                     <div class="row">
                         <div class="form-group col-md-6">

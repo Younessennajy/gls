@@ -1,10 +1,6 @@
-@extends('courses.layout')
-@section('content')
-
 <div class="card" style="margin:20px;">
   <div class="card-header">Create New Course</div>
   <div class="card-body">
-
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -46,5 +42,3 @@
     </form>
   </div>
 </div>
-
-@stop

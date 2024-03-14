@@ -23,8 +23,14 @@ Route::get('/', function () {
 Route::fallback(function () {
     return view('courses.notFound');
 });
+
+Route::get('/courses/filter',  [CourseController::class,'filter'])->name('courses.filter');
+
+
 Route::get('/home', [HomeController::class,'index'])->middleware('auth')->name('home');
+Route::get('/create', [CourseController::class,'create'])->middleware('auth')->name('create');
 Route::resource('courses', CourseController::class)->middleware(['auth','admin']);
+
 
 
 Route::middleware('auth')->group(function () {
@@ -34,7 +40,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::post('/contact/submit', [ContactController::class, 'submitForm'])->name('contact.submit');
+// Route::post('/contact/submit', [ContactController::class, 'submitForm'])->name('contact.submit');
 
 
 

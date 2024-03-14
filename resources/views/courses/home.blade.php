@@ -1,4 +1,4 @@
- @extends('courses.layout')
+ @extends('admin.adminhome')
 
 @section('content')
     <div class="container">

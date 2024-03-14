@@ -35,20 +35,15 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="/" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" width="50px" height="50px">
-        <span class="d-none d-lg-block">GLS Fes</span>
+        <span class="d-none d-lg-block ">GLS Fes</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
         <li class="nav-item dropdown pe-3">
-            <nav x-data="{ open: false }" class="bg-gray-100 ">
+            <nav x-data="{ open: false }" class="bg-transparent ">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-12">
@@ -142,7 +137,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="/home">
-          <i class="bi bi-person"></i>
+          <i class="bi bi-journal-text"></i>
           <span>Courses</span>
         </a>
       </li>
@@ -155,7 +150,7 @@
       </li><!-- End Profile Page Nav -->
 
     </ul>
-  </aside>
+</aside>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>

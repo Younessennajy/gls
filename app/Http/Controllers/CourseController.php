@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -13,41 +12,39 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $courses = Course::query()->paginate(5);
-        return view('courses.index')->with('courses', $courses);
-    }
-    // public function home()
-    // {
-    //     $courses = Course::orderBy('created_at', 'desc')->get();
-    //     return view('courses.layout')->with('courses', $courses);
-    // }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('courses.create');
-    }
-
-    public function filter(Request $request)
+    public function index(Request $request)
 {
+    $searchTerm = $request->input('query');
     $level = $request->input('level');
-
-    if ($level && $level !== 'All') {
-        $courses = Course::where('level', $level)->get();
-    } else {
-        $courses = Course::paginate(5);
-    }
-
-    return view('courses.index')->with('courses', $courses);
+    $courses = Course::query()
+        ->when($searchTerm, function ($query, $searchTerm) {
+            return $query->where('name', 'like', '%'.$searchTerm.'%');
+        })
+        ->when($level && $level != 'All', function ($query) use ($level) {
+            return $query->where('level', $level);
+        })
+        ->paginate(10);
+    return view('courses.index', compact('courses'));
 }
+public function filter(Request $request)
+{
 
-
-
+    $searchTerm = $request->input('query');
+    $level = $request->input('level');
+    $courses = Course::query()
+        ->when($searchTerm, function ($query, $searchTerm) {
+            return $query->where('name', 'like', '%'.$searchTerm.'%');
+        })
+        ->when($level && $level != 'All', function ($query) use ($level) {
+            return $query->where('level', $level);
+        })
+        ->paginate(10);
+    return view('dashboard', compact('courses'));
+}
+    public function create()
+{
+    return view('courses.createA');
+}
     /**
      * Store a newly created resource in storage.
      *

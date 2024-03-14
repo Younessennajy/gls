@@ -1,24 +1,31 @@
-@extends('courses.layout')
-
+@extends('admin.adminhome')
 @section('content')
-    <div class="container">
+    <div class="container " style="margin-top: 100px">
         <div class="row" style="margin: 20px;">
-            <div class="col-12">
+            <div class="col-full">
                 <div class="card">
                     <div class="card-header">
                         <h2>List of Courses </h2>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/courses/create') }}" class="btn btn-success btn-sm" title="Add New Student">
-                            Add New
-                        </a>
-                        <br/>
-
-                        <div class="search-bar">
-                            <form class="search-form d-flex align-items-center " method="POST" action="#">
-                            <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-                            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                            </form>
+                        <div class="d-flex justify-between">
+                            <div class="d-flex justify-between">
+                                <div class="btn-group" role="group" aria-label="Level Filter">
+                                    <a href="{{ route('courses.index', ['level' => 'All']) }}" class="btn btn-outline-dark @if(request('level') == 'All') active @endif">All</a>
+                                    <a href="{{ route('courses.index', ['level' => 'A1-1']) }}" class="btn btn-outline-dark @if(request('level') == 'A1-1') active @endif">A1-1</a>
+                                    <a href="{{ route('courses.index', ['level' => 'A1-2']) }}" class="btn btn-outline-dark @if(request('level') == 'A1-2') active @endif">A1-2</a>
+                                    <a href="{{ route('courses.index', ['level' => 'A2-1']) }}" class="btn btn-outline-dark @if(request('level') == 'A2-1') active @endif">A2-1</a>
+                                    <a href="{{ route('courses.index', ['level' => 'A2-2']) }}" class="btn btn-outline-dark @if(request('level') == 'A2-2') active @endif">A2-2</a>
+                                    <a href="{{ route('courses.index', ['level' => 'B1']) }}" class="btn btn-outline-dark @if(request('level') == 'B1') active @endif">B1</a>
+                                </div>
+                            </div>
+                            <div class="search-bar">
+                                <form class="search-form d-flex align-items-center" method="GET" action="{{ route('courses.index') }}">
+                                    @csrf
+                                    <input type="text" name="query" placeholder="Search" title="Enter search keyword" value="{{ request('query') }}">
+                                    <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                                </form>
+                            </div>
                         </div>
                         <br/>
                         <div class="table-responsive">
@@ -82,3 +89,4 @@
     {{ $courses->links() }}
 
 @endsection
+

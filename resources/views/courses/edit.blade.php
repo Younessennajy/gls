@@ -1,7 +1,14 @@
-@extends('courses.layout')
-@section('content')
-
-<div class="card" style="margin:20px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Course</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="card col-8 mx-auto my-5" >
   <div class="card-header">Edit COURSE </div>
   <div class="card-body">
 
@@ -9,33 +16,45 @@
         {!! csrf_field() !!}
         @method("PATCH")
         <input type="hidden" name="id" value="{{ $courses->id }}" />
-        <label>Name</label><br>
-        <input type="text" name="name" value="{{ $courses->name }}" class="form-control"><br>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" name="name" value="{{ $courses->name }}" class="form-control">
+        </div>
 
-        <label>Description</label><br>
-        <textarea name="desc" cols="30" rows="10" class="form-control">{{ $courses->desc }}</textarea><br>
+        <div class="mb-3">
+          <label for="desc" class="form-label">Description</label>
+          <textarea name="desc" cols="30" rows="10" class="form-control">{{ $courses->desc }}</textarea>
+        </div>
 
-        <label>Image</label><br>
-        <input type="file" name="image" class="form-control"><br>
-        <td><img src="{{ asset('storage/' . $courses->image) }}" alt="df" style="width: 100px;height: 100px;"></td>
+        <div class="mb-3">
+          <label for="image" class="form-label">Image</label>
+          <input type="file" name="image" class="form-control">
+          <td><img src="{{ asset('storage/' . $courses->image) }}" alt="df" style="width: 100px;height: 100px;"></td>
+        </div>
 
-        <label for="level">level</label><br>
-        <select name="level" id="level" value="{{ $courses->level }}">
+        <div class="mb-3">
+          <label for="level" class="form-label">Level</label>
+          <select name="level" id="level" class="form-select">
             <option value="All">All</option>
             <option value="A1-1">A1-1</option>
             <option value="A1-2">A1-2</option>
             <option value="A2-1">A2-1</option>
             <option value="A2-2">A2-2</option>
             <option value="B1">B1</option>
-        </select><br>
+          </select>
+        </div>
 
-        <label>URL</label><br>
-        <input type="url" name="url" value="{{ $courses->url }}" class="form-control"><br><br>
+        <div class="mb-3">
+          <label for="url" class="form-label">URL</label>
+          <input type="url" name="url" value="{{ $courses->url }}" class="form-control">
+        </div>
 
-        <input type="submit" value="Update" class="btn btn-success"><br>
+        <input type="submit" value="Update" class="btn btn-success">
     </form>
 
   </div>
 </div>
 
-@stop
+<!-- Bootstrap Bundle JS -->
+</body>
+</html>
