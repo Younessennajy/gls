@@ -1,8 +1,8 @@
 @extends('admin.adminhome')
 @section('create')
 <div class="col-7 mx-auto  border" style="margin-top: 120px">
-<div class="card-header">Create New Course</div>
-        <div class="card-body">
+<div class="card-header m-3 text-bold" style="font-size: 30px;">Create New Course</div>
+        <div class="card-body mx-3" >
             <form action="{{ url('/courses') }}" method="post" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <label>Name</label></br>
@@ -34,3 +34,5 @@
 
         </div>
     </div>
+</body>
+</html>

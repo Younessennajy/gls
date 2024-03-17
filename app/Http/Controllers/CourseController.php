@@ -28,19 +28,20 @@ class CourseController extends Controller
 }
 public function filter(Request $request)
 {
-
     $searchTerm = $request->input('query');
     $level = $request->input('level');
-    $courses = Course::query()
-        ->when($searchTerm, function ($query, $searchTerm) {
-            return $query->where('name', 'like', '%'.$searchTerm.'%');
-        })
-        ->when($level && $level != 'All', function ($query) use ($level) {
-            return $query->where('level', $level);
-        })
-        ->paginate(10);
-    return view('dashboard', compact('courses'));
+    $query = Course::query();
+    if ($level && $level != 'All') {
+        $query->where('level', $level);
+    }
+    if ($searchTerm) {
+        $query->where('name', 'like', '%'.$searchTerm.'%');
+    }
+    $courses = $query->paginate(10);
+    return view('filtered-courses', compact('courses'));
 }
+
+
     public function create()
 {
     return view('courses.createA');

@@ -1,31 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Cources</title>
-
-        <link rel="stylesheet" href="app.css">
-        <!-- Option 1: Include in HTML -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    </head>
+@include('head')
 <body>
 
 <header id="header" >
     <h1 class="text-black"><a href="/"><img src="img/logo.png" class='col-4' alt='img'/></a></h1>
       <ul class='d-flex list-unstyled align-items-center mt-4 text-gray-800 '>
-        <li><a class="mx-2 bold text-decoration-none hover:text-green-500"  href="#home">Home</a></li>
-        <li><a class="mx-2 bold text-decoration-none" href="#about">About</a></li>
-        <li><a  class="mx-2 bold text-decoration-none" href="/courses">Courses</a></li>
-        <li><a class="mx-2 bold text-decoration-none"  href="#contact">Contact</a></li>
+        <li><a class="mx-4 bold text-decoration-none hover:text-green-500"  href="#home">Home</a></li>
+        <li><a class="mx-4 bold text-decoration-none" href="#about">About</a></li>
+        <li><a  class="mx-4 bold text-decoration-none" href="/courses">Courses</a></li>
+        <li><a class="mx-4 bold text-decoration-none"  href="#contact">Contact</a></li>
       </ul>
         @if (Route::has('login'))
-                <div>
+                <div class="d-flex justify-between align-items-center">
                     @auth
-                        <a href="{{ url('/home') }} "><span style="font-size: 2rem;"><i class="bi bi-house-door"></i></span></a>
+                        <a href="{{ url('/home') }} "><span style="font-size: 1.8rem;"><i class="bi bi-person"></i></span></a>
                     @else
-                        <a href="{{ route('login') }}" class="mx-4 text-decoration-none" >Log in</a>
+                        <a href="{{ route('login') }}" class="mx-4 text-decoration-none " ><i class="bi-box-arrow-in-right"></i> Log in</a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class=" text-decoration-none" >Register</a>
+                            <a href="{{ route('register') }}" class=" text-decoration-none" ><i class="bi-person-plus"></i> Register</a>
                         @endif
                     @endauth
                 </div>
@@ -33,11 +24,11 @@
 </header>
 
 {{-- home --}}
-<section id="hero" class="d-flex justify-content-center align-items-center">
+<section id="hero" class="d-flex justify-content-center align-items-center fade-in">
     <div class="container position-absolute">
         <h1 class="display-4">Learning Today,<br/>Leading Tomorrow</h1>
         <h2 class="text-white mb-4">Fuel your academic future on our learning portal platform</h2>
-        <a href="/courses">
+        <a href="/home">
         <button class="learn-more">
             <span class="circle" aria-hidden="true">
             <span class="icon arrow"></span>
@@ -96,9 +87,9 @@
         <div class="section-title">
             <h2>Facts</h2>
             <p>
-                A highly motivated front-end developer with a substantial background in responsive web design for
-                e-commerce platforms. Demonstrates a track record of successfully creating interactive and
-                user-centric web designs that are adaptable to varying scales and requirements.
+                At Centre GLS, we pride ourselves on being a premier institution for German language education
+                in Morocco. With a rich history of language instruction and a dedicated team of experienced educators,
+                we offer a comprehensive learning experience tailored to meet the needs of our students.
             </p>
         </div>
 
@@ -168,7 +159,7 @@
             </div>
 
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                <form action="{{-- {{ route('contact.submit') }} --}}" method="post">
+                <form id="contact-form" action="" method="post">
                     @csrf
                     <div class="row">
                         <div class="form-group col-md-6">
@@ -197,6 +188,8 @@
 
     </div>
 </section>
+
+
 
 {{-- Contact --}}
 <footer id="footer">
@@ -244,7 +237,6 @@
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                 <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
                 <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
             <form action="" method="post">
@@ -254,7 +246,6 @@
               </div>
             </form>
           </div>
-
         </div>
       </div>
     </div>
@@ -271,29 +262,6 @@
     </div>
 </footer>
 
-<script>
-    // Add smooth scrolling to anchor links
-    document.addEventListener("DOMContentLoaded", function() {
-        var scrollLinks = document.querySelectorAll('a[href^="#"]');
-
-        scrollLinks.forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                var targetId = this.getAttribute('href').substring(1);
-                var targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    var offsetTop = targetElement.offsetTop;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    });
-</script>
 
 </body>
 </html>

@@ -4,7 +4,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +14,12 @@ use App\Http\Controllers\ContactController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// routes/web.php
+
+
+
+Route::get('/filtered-courses', 'CourseController@filter')->name('filtered-courses');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +33,7 @@ Route::get('/courses/filter',  [CourseController::class,'filter'])->name('course
 
 
 Route::get('/home', [HomeController::class,'index'])->middleware('auth')->name('home');
+Route::get('/dash', [HomeController::class,'filter'])->middleware('auth')->name('dash');
 Route::get('/create', [CourseController::class,'create'])->middleware('auth')->name('create');
 Route::resource('courses', CourseController::class)->middleware(['auth','admin']);
 

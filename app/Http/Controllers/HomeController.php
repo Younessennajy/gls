@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index(){
 
-        $courses = Course::query()->paginate(5);
+        $courses = Course::query()->paginate(10);
 
         if(Auth::id()){
             $userrole = Auth()->user()->role;

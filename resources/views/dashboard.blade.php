@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Courses</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}"></script>
-    <link rel="stylesheet" href="app.css">
-    <link href="{{ asset('node_modules/bootstrap-icons/font/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
+@include('head')
 <body>
 <x-app-layout>
     <div class="py-12">
@@ -31,7 +21,7 @@
                                             <a href="{{ route('courses.filter', ['level' => 'B1']) }}" class="btn btn-outline-dark @if(request('level') == 'B1') active @endif">B1</a>
                                         </div>
                                         <div class="search-bar">
-                                            <form class="search-form d-flex align-items-center" method="GET" action="{{ route('courses.index') }}">
+                                            <form class="search-form d-flex align-items-center" method="GET" action="{{ route('courses.filter') }}">
                                                 @csrf
                                                 <input type="text" name="query" placeholder="Search" title="Enter search keyword" value="{{ request('query') }}">
                                                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
