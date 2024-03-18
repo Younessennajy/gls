@@ -1,9 +1,12 @@
 <?php
 
+namespace App\Http\Controllers;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,15 +49,8 @@ Route::middleware('auth')->group(function () {
 });
 
 
-// Route::post('/contact/submit', [ContactController::class, 'submitForm'])->name('contact.submit');
 
-
-
-
-
-
-
-
+Route::post('/post-mail', [MailController::class, 'sendMail'])->name('post-mail');
 
 
 

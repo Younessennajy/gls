@@ -79,7 +79,9 @@ main{
 
 
  /* end profile */
-
+ .icon {
+    border-radius: 50px;
+}
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -700,7 +702,13 @@ section {
 .contact {
   padding-bottom: 130px;
 }
-
+.contact h1{
+    font-size:30px ;
+    text-align: center;
+  }
+  .connect{
+    color:  #f13024;
+  }
 .contact .info {
   padding: 30px;
   background: #fff;
