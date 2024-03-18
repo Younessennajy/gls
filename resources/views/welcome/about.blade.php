@@ -8,20 +8,25 @@
                 <img src="img/about.jpg" class="img-fluid rounded" alt="About Image"/>
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-lg-1">
-                <h3>Discover GLS - Your Prime Destination for German Mastery in Morocco!</h3>
+                <h3>Professor Zakaria is the best choice for mastering the German language in Morocco!</h3>
                 <p class="fst-italic">
-                    At Centre GLS, we provide an exceptional German language learning experience. With qualified
-                    instructors and a comprehensive program, we are dedicated to helping you acquire top-notch linguistic
-                    and cultural skills.
+                    Experience a unique approach to language learning tailored to your needs.
+                    Whether you're a beginner or looking to refine your skills, our dedication
+                    and expertise will ensure your language learning journey is both enjoyable and
+                    rewarding. Join us today and unlock the doors to fluency in German.
                 </p>
                 <ul class="list-unstyled">
                     <li>
-                        <i class="bi bi-check"></i>
-                        Experience personalized learning with our expert instructors..
+                        <i class="bi bi-check "></i>
+                        The most distinguished and exceptional professors.
                     </li>
                     <li>
-                        <i class="bi bi-check "></i>
-                        Dive into the rich German culture and language nuances..
+                        <i class="bi bi-check"></i>
+                        la creation dun environnement d'apprentissage positif et dynamique..
+                    </li>
+                    <li>
+                        <i class="bi bi-check"></i>
+                        favorisant la motivation et le progrès de chaque étudiant...
                     </li>
                     <li>
                         <i class="bi bi-check "></i>
@@ -29,8 +34,8 @@
                     </li>
                 </ul>
                 <p>
-                    Join us at Centre GLS to immerse yourself in the world of German language and culture. Our commitment
-                    is to make your language learning journey enjoyable and rewarding.
+                    With me, dedicated to providing you with the best possible language learning experience,
+                    join us today and take the first step towards achieving your language proficiency goals
                 </p>
             </div>
         </div>

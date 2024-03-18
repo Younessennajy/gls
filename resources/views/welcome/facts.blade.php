@@ -3,9 +3,11 @@
         <div class="section-title">
             <h2>Facts</h2>
             <p>
-                At Centre GLS, we pride ourselves on being a premier institution for German language education
-                in Morocco. With a rich history of language instruction and a dedicated team of experienced educators,
-                we offer a comprehensive learning experience tailored to meet the needs of our students.
+                At Centre GLS, I am more than a professor; I am a mentor, a guide,
+                and a facilitator of transformation. Together, we embark on a journey
+                of linguistic discovery, unlocking new opportunities and expanding horizons.
+                Join me in exploring the beauty and intricacies of the German language, where every
+                lesson is an invitation to connect, communicate, and embrace a world of possibilities.
             </p>
         </div>
 

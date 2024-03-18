@@ -26,8 +26,7 @@
 
         <div class="mb-3">
           <label for="level" class="form-label">Level</label>
-          <select name="level" id="level" class="form-select">
-            <option value="All">All</option>
+          <select name="level" id="level" class="form-select"  value="{{ $courses->name }}">
             <option value="A1-1">A1-1</option>
             <option value="A1-2">A1-2</option>
             <option value="A2-1">A2-1</option>
