@@ -9,7 +9,7 @@
                         <h2>List of Courses</h2>
                     </div>
                     <div class="card-body">
-                        <div class="d-flex flex-column flex-md-row justify-between">
+                        <div class="d-flex justify-between flex-column flex-sm-row">
                             <div class="d-flex justify-between mb-2 mb-md-0">
                                 <div class="btn-group" role="group" aria-label="Level Filter">
                                     <a href="{{ route('courses.index', ['level' => 'All']) }}" class="btn btn-outline-dark @if(request('level') == 'All') active @endif">All</a>
@@ -21,7 +21,7 @@
                                 </div>
                             </div>
                             <div class="search-bar">
-                                <form class="search-form d-flex align-items-center" method="GET" action="{{ route('courses.filter') }}">
+                                <form class="search-form d-flex align-items-center" method="GET" action="{{ route('courses.index') }}">
                                     @csrf
                                     <input type="text" name="query" placeholder="Search" title="Enter search keyword" value="{{ request('query') }}">
                                     <button type="submit" title="Search"><i class="bi bi-search"></i></button>
@@ -72,7 +72,7 @@
                                                 <form method="POST" action="{{ url('/courses' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete course" onclick="return confirm('Confirm delete?')">
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete course" onclick="return confirm('Are you sure you want to delete this course?')">
                                                         <i class="bi bi-trash" aria-hidden="true"></i> Delete
                                                     </button>
                                                 </form>
@@ -93,3 +93,6 @@
     </div>
     {{ $courses->links() }}
 @endsection
+
+
+

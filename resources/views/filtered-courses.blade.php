@@ -12,8 +12,8 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div class="btn-group" role="group" aria-label="Level Filter">
+                            <div class="d-flex justify-between flex-column flex-sm-row">
+                                <div class="btn-group mb-2 mb-sm-0 mr-sm-2" role="group" aria-label="Level Filter">
                                     <a href="{{ route('courses.filter', ['level' => 'All']) }}" class="btn btn-outline-dark @if(request('level') == 'All') active @endif">All</a>
                                     <a href="{{ route('courses.filter', ['level' => 'A1-1']) }}" class="btn btn-outline-dark @if(request('level') == 'A1-1') active @endif">A1-1</a>
                                     <a href="{{ route('courses.filter', ['level' => 'A1-2']) }}" class="btn btn-outline-dark @if(request('level') == 'A1-2') active @endif">A1-2</a>
@@ -24,11 +24,12 @@
                                 <div class="search-bar">
                                     <form class="search-form d-flex align-items-center" method="GET" action="{{ route('courses.filter') }}">
                                         @csrf
-                                        <input type="text" name="query" placeholder="Search" title="Enter search keyword" value="{{ request('query') }}">
-                                        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                                        <input type="text" name="query" class="form-control mr-2 mb-2 mb-sm-0" placeholder="Search" title="Enter search keyword" value="{{ request('query') }}">
+                                        <button type="submit" class="btn btn-outline-dark" title="Search"><i class="bi bi-search"></i></button>
                                     </form>
                                 </div>
                             </div>
+
                             <br>
                             <div class="row">
                                 @forelse($courses as $item)

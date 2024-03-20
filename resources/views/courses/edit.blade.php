@@ -26,13 +26,14 @@
 
         <div class="mb-3">
           <label for="level" class="form-label">Level</label>
-          <select name="level" id="level" class="form-select"  value="{{ $courses->name }}">
-            <option value="A1-1">A1-1</option>
-            <option value="A1-2">A1-2</option>
-            <option value="A2-1">A2-1</option>
-            <option value="A2-2">A2-2</option>
-            <option value="B1">B1</option>
-          </select>
+          <select name="level" id="level" class="form-select">
+            <option value="A1-1" {{ $courses->level == 'A1-1' ? 'selected' : '' }}>A1-1</option>
+            <option value="A1-2" {{ $courses->level == 'A1-2' ? 'selected' : '' }}>A1-2</option>
+            <option value="A2-1" {{ $courses->level == 'A2-1' ? 'selected' : '' }}>A2-1</option>
+            <option value="A2-2" {{ $courses->level == 'A2-2' ? 'selected' : '' }}>A2-2</option>
+            <option value="B1" {{ $courses->level == 'B1' ? 'selected' : '' }}>B1</option>
+        </select>
+
         </div>
 
         <div class="mb-3">
@@ -41,6 +42,7 @@
         </div>
 
         <input type="submit" value="Update" class="btn btn-success">
+        <button class="btn btn-light"><a href="/courses" class="text-decoration-none bold">Cancel</a></button>
     </form>
 
   </div>

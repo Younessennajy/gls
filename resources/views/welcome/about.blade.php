@@ -3,6 +3,11 @@
         <div class="row">
                 <div class="section-title ">
                     <h2>About</h2>
+                    <span class="d-flex">
+                        <span class="C-black"></span>
+                        <span class="C-red"></span>
+                        <span class="C-gold"></span>
+                    </span>
                 </div>
             <div class="col-lg-6 order-lg-2">
                 <img src="img/about.jpg" class="img-fluid rounded" alt="About Image"/>

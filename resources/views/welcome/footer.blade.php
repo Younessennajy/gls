@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Mentor</h3>
+            <h3>GLS Fes</h3>
             <p>
             Bureaux al Atlas, <br />
               Rue el Hoiema, Atlas, Fes<br />

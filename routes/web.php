@@ -32,7 +32,7 @@ Route::fallback(function () {
     return view('courses.notFound');
 });
 
-Route::get('/courses/filter',  [CourseController::class,'filter'])->name('courses.filter');
+Route::get('/courses/filter',  [CourseController::class,'filter'])->name('courses.filter')->middleware(['auth']);
 
 
 Route::get('/home', [HomeController::class,'index'])->middleware('auth')->name('home');
@@ -54,6 +54,6 @@ Route::post('/post-mail', [MailController::class, 'sendMail'])->name('post-mail'
 
 
 
-// In your routes file (web.php or another)
+
 
 require __DIR__.'/auth.php';

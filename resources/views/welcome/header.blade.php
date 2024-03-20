@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Header</title>
-    <style>
-
-    </style>
-</head>
 <body>
 
 <header id="header">
@@ -16,10 +6,12 @@
     </div>
     <nav class="menu-nav">
         <ul class='d-flex list-unstyled align-items-center mt-4 text-gray-800'>
-            <li><a class="mx-4 bold text-decoration-none hover:text-green-500"  href="#home">Home</a></li>
-            <li><a class="mx-4 bold text-decoration-none" href="#about">About</a></li>
-            <li><a class="mx-4 bold text-decoration-none" href="/courses">Courses</a></li>
-            <li><a class="mx-4 bold text-decoration-none"  href="#contact">Contact</a></li>
+            <li><a class="mx-4 bold text-decoration-none cursor-pointer hover:text-green-500" onclick="navigateTo('home')">Home</a></li>
+            <li><a class="mx-4 bold text-decoration-none cursor-pointer" onclick="navigateTo('about')">About</a></li>
+            <li><a class="mx-4 bold text-decoration-none cursor-pointer" href="/courses" >Courses</a></li>
+            <li><a class="mx-4 bold text-decoration-none cursor-pointer" onclick="navigateTo('Activities')">Activities</a></li>
+            <li><a class="mx-4 bold text-decoration-none cursor-pointer" onclick="navigateTo('galerie')">Gallery</a></li>
+            <li><a class="mx-4 bold text-decoration-none cursor-pointer" onclick="navigateTo('contact')">Contact</a></li>
         </ul>
     </nav>
     <div class="login-register-section">
@@ -38,5 +30,4 @@
     </div>
 </header>
 
-</body>
-</html>
+

@@ -39,7 +39,6 @@ class MailController extends Controller
 
         Session::flash('success', 'Your message has been sent successfully!');
 
-    // Redirection vers la page précédente après 10 secondes
     return redirect()->back()->withInput()->with('redirectAfter', true)->with('redirectDelay', 10);
     }
 }

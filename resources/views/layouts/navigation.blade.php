@@ -8,6 +8,7 @@
   <title>GLS</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <link rel="icon" type="image/png" href="{{ asset('img/glst.png') }}"  class="icon">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
