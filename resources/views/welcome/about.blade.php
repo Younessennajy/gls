@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
                 <div class="section-title ">
-                    <h2>About</h2>
+                    <h2>@lang('public.About')</h2>
                     <span class="d-flex">
                         <span class="C-black"></span>
                         <span class="C-red"></span>

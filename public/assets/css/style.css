@@ -72,6 +72,13 @@ h6 {
     width: 280px;
   }
 }
+@media all and (min-width: 900px) {
+    .headerr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  }
 
 .logo img {
   max-height: 50px;
@@ -85,7 +92,7 @@ h6 {
   font-family: "Nunito", sans-serif;
 }
 
-.header {
+.headerr {
   transition: all 0.5s;
   z-index: 997;
   height: 60px;
@@ -96,7 +103,7 @@ h6 {
   /* Search Bar */
 }
 
-.header .toggle-sidebar-btn {
+.headerr .toggle-sidebar-btn {
   font-size: 32px;
   padding-left: 10px;
   cursor: pointer;
@@ -135,6 +142,13 @@ h6 {
   font-size: 14px;
   font-weight: 600;
 }
+.header-nav .badge-number {
+    position: absolute;
+    inset: -2px -5px auto auto;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 3px 6px;
+  }
 
 .header-nav .profile {
   min-width: 240px;
@@ -177,7 +191,7 @@ h6 {
   top: 60px;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 230px;
   z-index: 996;
   transition: all 0.3s;
   padding: 20px;

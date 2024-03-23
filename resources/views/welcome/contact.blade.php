@@ -1,13 +1,13 @@
 <section id="contact" class="contact">
     <div class="section-title container">
         <div class="section-title">
-            <h2>Contact</h2>
+            <h2>@lang('public.Contact')</h2>
             <span class="d-flex">
                 <span class="C-black"></span>
                 <span class="C-red"></span>
                 <span class="C-gold"></span>
             </span>
-            <h1>Let’s  <span class='connect'>connect.</span> </h1>
+            <h1>@lang('public.Let’s')  <span class='connect'>@lang('public.connect')</span> </h1>
         </div>
 
         <div class="row">
@@ -16,7 +16,7 @@
                 <div class="info">
                     <div class="address">
                         <i class="bi bi-geo-alt"></i>
-                        <h4>Location:</h4>
+                        <h4>@lang('public.Location')</h4>
                         <p>fes</p>
                     </div>
 
@@ -49,14 +49,14 @@
                     @csrf
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="name">Your Name</label>
+                            <label for="name">@lang('public.Your Name')</label>
                             <input type="text" name="name" class="form-control" required />
                             @error('name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="email">Your Email</label>
+                            <label for="email">@lang('public.Your Email')</label>
                             <input type="email" name="email" class="form-control" required pattern=".+@gmail\.com"/>
                             @error('email')
                                 <span class="text-danger">{{ $message }}</span>
@@ -64,14 +64,14 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="subject">Subject</label>
+                        <label for="subject">@lang('public.Subject')</label>
                         <input type="text" name="subject" class="form-control" required />
                         @error('subject')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
+                        <label for="message">@lang('public.Message')</label>
                         <textarea name="message" class="form-control" rows="10" required></textarea>
                         @error('message')
                             <span class="text-danger">{{ $message }}</span>
@@ -88,7 +88,7 @@
                                 </svg>
                               </div>
                             </div>
-                            <span>Send</span>
+                            <span>@lang('public.Send')</span>
                           </button>
                     </div>
                 </form>

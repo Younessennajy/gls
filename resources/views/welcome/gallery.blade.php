@@ -2,7 +2,7 @@
 
     <div id="galerie" class="galerie container">
         <div class="section-title mt-5">
-            <h2>Gallery</h2>
+            <h2>@lang('public.Gallery')</h2>
             <span class="d-flex">
                 <span class="C-black"></span>
                 <span class="C-red"></span>

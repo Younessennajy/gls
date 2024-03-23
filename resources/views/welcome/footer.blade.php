@@ -5,27 +5,27 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>GLS Fes</h3>
             <p>
-            Bureaux al Atlas, <br />
-              Rue el Hoiema, Atlas, Fes<br />
-              Morroco <br /><br />
-              <strong>Phone:</strong> +212 05 35 65 92 86<br />
-              <strong>Email:</strong> info@example.com<br />
+                @lang('public.Bureaux al Atlas'), <br />
+                @lang('public.Rue el Hoiema, Atlas, Fes')<br />
+                @lang('public.Morroco') <br /><br />
+              <strong>@lang('public.Phone'):</strong> +212 05 35 65 92 86<br />
+              <strong>@lang('public.Email'):</strong> info@example.com<br />
             </p>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>@lang('public.Useful Links')</h4>
             <ul class="list-unstyled">
-              <li><i class="bi bi-chevron-right"></i> <Link to="/">Home</Link></li>
-              <li><i class="bi bi-chevron-right"></i> <Link to="#about">About us</Link></li>
-              <li><i class="bi bi-chevron-right"></i> <Link to="#">Services</Link></li>
-              <li><i class="bi bi-chevron-right"></i> <Link to="#">Terms of service</Link></li>
-              <li><i class="bi bi-chevron-right"></i> <Link to="#">Privacy policy</Link></li>
+              <li><i class="bi bi-chevron-right"></i> <Link to="/">@lang('public.Home')</Link></li>
+              <li><i class="bi bi-chevron-right"></i> <Link to="#about">@lang('public.About us')</Link></li>
+              <li><i class="bi bi-chevron-right"></i> <Link to="#">@lang('public.Services')</Link></li>
+              <li><i class="bi bi-chevron-right"></i> <Link to="#">@lang('public.Terms of service ')</Link></li>
+              <li><i class="bi bi-chevron-right"></i> <Link to="#">@lang('public.Privacy policy')</Link></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Levels</h4>
+            <h4>@lang('public.Our Levels')</h4>
             <ul class="list-unstyled">
               <li><i class="bi bi-chevron-right"></i> <a to="#">A1 - 1</a></li>
               <li><i class="bi bi-chevron-right"></i> <a to="#">A1 - 2</a></li>
@@ -36,7 +36,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Platforms</h4>
+            <h4>@lang('public.Join Our Platforms')</h4>
             <div class="social-links text-md-right pt-3 pt-md-0 my-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>

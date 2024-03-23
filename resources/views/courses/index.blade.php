@@ -51,7 +51,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->desc }}</td>
-                                            <td><img src="{{ asset('storage/' . $item->image) }}" alt="Course Image" style="width: 100px; height: 100px;"></td>
+                                            <td><img src="{{ asset('storage/' . $item->image) }}" alt="Course Image" style="min-width: 100px; height: 100px;"></td>
                                             <td>{{ $item->level }}</td>
                                             <td>{{ $item->url }}</td>
                                             <td>

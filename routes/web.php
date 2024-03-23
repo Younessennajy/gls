@@ -52,8 +52,8 @@ Route::middleware('auth')->group(function () {
 
 Route::post('/post-mail', [MailController::class, 'sendMail'])->name('post-mail');
 
-
-
+/* lang */
+Route::get('locale/{langue}',[Localization::class, 'setLang']);
 
 
 require __DIR__.'/auth.php';

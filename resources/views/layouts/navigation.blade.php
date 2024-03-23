@@ -31,9 +31,9 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
+  <header id="headerr" class="headerr fixed-top d-flex align-items-center">
 
-    <div class="d-flex align-items-center justify-content-between">
+    <div class="div d-flex align-items-center justify-content-between">
       <a href="/" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" width="50px" height="50px">
         <span class="d-none d-lg-block ">GLS Fes</span>
@@ -46,12 +46,12 @@
         <li class="nav-item dropdown pe-3">
             <nav x-data="{ open: false }" class="bg-transparent ">
                 <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:-mt-10">
                     <div class="flex justify-between h-12">
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
                             <x-dropdown align="right" width="48">
                                 <x-slot name="trigger">
-                                    <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-black  bg-white hover:text-gray-700  focus:outline-none transition ease-in-out duration-150">
+                                    <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-black  bg-white hover:text-gray-700  focus:outline-none transition ease-in-out duration-150 ">
                                         <div>{{ Auth::user()->name }}</div>
 
                                         <div class="ms-1">
@@ -133,7 +133,6 @@
 </header>
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
-
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
@@ -148,7 +147,7 @@
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
-      </li><!-- End Profile Page Nav -->
+      </li>
 
     </ul>
 </aside>

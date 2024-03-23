@@ -1,7 +1,7 @@
 
     <div id="Activities" class="container mt-5">
         <div class="section-title">
-            <h2>Activities</h2>
+            <h2>@lang('public.Activities')</h2>
             <span class="d-flex">
                 <span class="C-black"></span>
                 <span class="C-red"></span>
